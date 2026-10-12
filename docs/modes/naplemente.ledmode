@@ -1,0 +1,30 @@
+{
+  "ledmode": 1,
+  "name": "Naplemente",
+  "effect": "keyframes",
+  "speed": 128,
+  "intensity": 128,
+  "frames": [
+    {
+      "color": "#FF5A00",
+      "fade": 4000,
+      "hold": 3000
+    },
+    {
+      "color": "#FF1E3C",
+      "fade": 4000,
+      "hold": 3000
+    },
+    {
+      "color": "#7A1FA2",
+      "fade": 4000,
+      "hold": 3000
+    },
+    {
+      "color": "#2A0A6E",
+      "fade": 4000,
+      "hold": 3000
+    }
+  ],
+  "description": "Narancsból bíboron át mélylilába, körbe-körbe."
+}

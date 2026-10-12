@@ -1,0 +1,13 @@
+{
+  "ledmode": 1,
+  "name": "Gyertyafény",
+  "effect": "fire",
+  "speed": 80,
+  "intensity": 40,
+  "colors": [
+    "#5A1400",
+    "#FF6A10",
+    "#FFC27A"
+  ],
+  "description": "Halk, meleg pislákolás saját lángszínekkel."
+}

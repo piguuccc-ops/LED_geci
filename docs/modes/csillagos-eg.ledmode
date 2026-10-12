@@ -1,0 +1,13 @@
+{
+  "ledmode": 1,
+  "name": "Csillagos ég",
+  "effect": "twinkle",
+  "speed": 70,
+  "intensity": 110,
+  "colors": [
+    "#FFFFFF",
+    "#9EC8FF",
+    "#FFE6B0"
+  ],
+  "description": "Fehér és halványkék csillagok villannak fel."
+}

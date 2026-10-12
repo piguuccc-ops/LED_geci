@@ -1,0 +1,42 @@
+[
+  {
+    "file": "szivarvany.ledmode",
+    "desc": "Vándorló szivárvány az egész szalagon."
+  },
+  {
+    "file": "taborutz.ledmode",
+    "desc": "Lobogó tábortűz a szalag egyik végéből."
+  },
+  {
+    "file": "gyertyafeny.ledmode",
+    "desc": "Halk, meleg pislákolás saját lángszínekkel."
+  },
+  {
+    "file": "naplemente.ledmode",
+    "desc": "Narancsból bíboron át mélylilába, körbe-körbe."
+  },
+  {
+    "file": "napfelkelte.ledmode",
+    "desc": "Öt perc alatt sötétből meleg fehérig, aztán úgy marad. Ébresztőfénynek jó."
+  },
+  {
+    "file": "csillagos-eg.ledmode",
+    "desc": "Fehér és halványkék csillagok villannak fel."
+  },
+  {
+    "file": "ocean.ledmode",
+    "desc": "Lassú kék hullámok sötétkék háttéren."
+  },
+  {
+    "file": "nyugodt-kek.ledmode",
+    "desc": "Lassú lélegzés kékben, elalváshoz."
+  },
+  {
+    "file": "karacsony.ledmode",
+    "desc": "Piros, zöld és meleg fehér futófény."
+  },
+  {
+    "file": "buli.ledmode",
+    "desc": "Négy effekt váltakozik 12–15 másodpercenként."
+  }
+]

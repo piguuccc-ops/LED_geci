@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Firmware feltöltése – Fénycsík</title>
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="stylesheet" href="app.css">
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+  <style>
+    .flash { max-width: 680px; margin: 0 auto; padding: 28px 20px 64px; display: grid; gap: 22px; }
+    .flash h1 { font-size: 31px; line-height: 1.15; font-weight: 650; font-stretch: 112%; margin: 0; }
+    .flash ol { margin: 0; padding-left: 22px; display: grid; gap: 10px; }
+    .flash li::marker { color: var(--muted); font-variant-numeric: tabular-nums; }
+    .install { padding: 18px; border: 1px solid var(--line); border-radius: 14px; display: grid; gap: 12px; justify-items: start; }
+    esp-web-install-button { --esp-tools-button-color: #ffb15c; --esp-tools-button-text-color: #000; --esp-tools-button-border-radius: 10px; }
+    esp-web-install-button:not(:defined) > [slot] { display: none; }
+    esp-web-install-button:not(:defined)::before { content: 'A telepítő betöltése… (internetkapcsolat kell hozzá)'; color: var(--muted); }
+    .warn { color: var(--amber); }
+    details { border-top: 1px solid var(--line); padding-top: 12px; }
+    details p { margin-top: 8px; }
+    summary { cursor: pointer; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <main class="flash">
+    <p><a href="./">Vissza az apphoz</a></p>
+    <h1>Firmware feltöltése az ESP32-re</h1>
+    <p class="muted">Ezt a laptopodon csináld, Chrome-ban vagy Edge-ben: a böngésző USB-n keresztül tölti fel a programot, nem kell hozzá Arduino IDE. Telefonról nem megy.</p>
+
+    <div class="install">
+      <esp-web-install-button manifest="firmware/manifest.json">
+        <span slot="unsupported" class="warn">Ez a böngésző nem tud USB soros portot kezelni. Nyisd meg az oldalt asztali Chrome-ban vagy Edge-ben.</span>
+        <span slot="not-allowed" class="warn">Ez csak HTTPS-ről működik (GitHub Pages-en rendben van).</span>
+      </esp-web-install-button>
+      <p class="hint">A lapka típusát (ESP32, ESP32-S3, ESP32-C3) magától felismeri.</p>
+    </div>
+
+    <ol>
+      <li>Dugd be az ESP32-t USB-adatkábellel a laptopba. A csak töltésre jó kábelekkel nem látszik a port.</li>
+      <li>Kattints a <b>Connect</b> gombra, és válaszd ki a megjelenő portot (CP210x, CH340 vagy USB JTAG/serial).</li>
+      <li>Első feltöltésnél pipáld be az <b>Erase device</b> lehetőséget. Később, frissítésnél hagyd üresen, így megmaradnak a beállításaid és a mentett módjaid.</li>
+      <li>Kb. egy perc múlva kész. Húzd ki és dugd vissza az ESP32-t, a szalag szivárványban indul.</li>
+      <li>Nyisd meg az appot, koppints a <b>Csatlakozás</b> gombra, és a Beállítás fülön add meg a LED-ek számát és az adatlábat.</li>
+    </ol>
+
+    <details>
+      <summary>Nem jelenik meg a port</summary>
+      <p class="muted">Windows 11 általában magától telepíti a meghajtót. Ha mégsem, a lapkán lévő USB átalakító szerint a Silicon Labs CP210x vagy a WCH CH340 meghajtó kell. Próbálj másik kábelt vagy USB portot is.</p>
+    </details>
+    <details>
+      <summary>„Connecting…” felirattal elakad</summary>
+      <p class="muted">Tartsd lenyomva a lapkán a BOOT gombot, kattints újra a feltöltésre, és csak akkor engedd el, amikor elindult az írás. ESP32-C3 és S3 lapkáknál natív USB esetén: BOOT gombot nyomva tartva dugd be a kábelt.</p>
+    </details>
+    <details>
+      <summary>Inkább Arduino IDE-vel tölteném fel</summary>
+      <p class="muted">A forráskód a <code>firmware/Fenycsik</code> mappában van. Kell hozzá az esp32 alaplapcsomag (3.x), valamint a NimBLE-Arduino, Adafruit NeoPixel és ArduinoJson könyvtár. A részletek a README-ben.</p>
+    </details>
+  </main>
+</body>
+</html>

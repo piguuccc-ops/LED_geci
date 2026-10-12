@@ -1,0 +1,42 @@
+{
+  "name": "Fénycsík – LED szalag vezérlő",
+  "short_name": "Fénycsík",
+  "description": "ESP32 LED szalag vezérlő Bluetooth-on: színek, fényerő, automatikus módok.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "lang": "hu",
+  "dir": "ltr",
+  "categories": ["utilities", "lifestyle"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "file_handlers": [
+    {
+      "action": "./",
+      "accept": { "application/json": [".ledmode"] },
+      "icons": [{ "src": "icons/file-256.png", "sizes": "256x256", "type": "image/png" }],
+      "launch_type": "single-client"
+    }
+  ],
+  "launch_handler": { "client_mode": ["focus-existing", "auto"] },
+  "share_target": {
+    "action": "./share-target",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        { "name": "file", "accept": [".ledmode", "application/json", "text/plain", "application/octet-stream"] }
+      ]
+    }
+  }
+}

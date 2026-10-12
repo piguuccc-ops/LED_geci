@@ -1,0 +1,11 @@
+{
+  "ledmode": 1,
+  "name": "Nyugodt kék",
+  "effect": "breathe",
+  "speed": 60,
+  "intensity": 200,
+  "colors": [
+    "#1E5BFF"
+  ],
+  "description": "Lassú lélegzés kékben, elalváshoz."
+}

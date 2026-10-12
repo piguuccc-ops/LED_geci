@@ -1,0 +1,8 @@
+{
+  "ledmode": 1,
+  "name": "Szivárvány",
+  "effect": "rainbow",
+  "speed": 110,
+  "intensity": 60,
+  "description": "Vándorló szivárvány az egész szalagon."
+}

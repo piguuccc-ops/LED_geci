@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Fénycsík</title>
+  <meta name="description" content="LED szalag vezérlő ESP32-höz Bluetooth-on: színek, fényerő, automatikus módok.">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="preload" href="fonts/archivo-var.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="app.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body data-conn="idle">
+  <div class="app">
+    <div class="head">
+      <header class="top">
+        <div class="brand">
+          <svg class="mark" viewBox="0 0 32 12" aria-hidden="true"><rect x="0.5" y="2.5" width="31" height="7" rx="2" fill="#16191e"/><circle cx="6" cy="6" r="2.4" fill="#ff5a00"/><circle cx="16" cy="6" r="2.4" fill="#ff2e9a"/><circle cx="26" cy="6" r="2.4" fill="#2f7bff"/></svg>
+          <span class="dev-name" id="devName">Fénycsík</span>
+        </div>
+        <button class="conn" id="connBtn" type="button" data-state="idle">
+          <span class="dot" aria-hidden="true"></span><span class="conn-label">Csatlakozás</span>
+        </button>
+      </header>
+      <section class="stage" aria-label="A szalag most">
+        <canvas id="hero" class="hero" aria-hidden="true"></canvas>
+        <div class="now" aria-live="polite"><span class="now-name" id="nowName"></span><span class="now-fx" id="nowFx"></span></div>
+        <div class="master">
+          <button class="power" id="powerBtn" type="button" aria-pressed="true" aria-label="Kikapcsolás">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v8M7.2 6.3a7 7 0 1 0 9.6 0"/></svg>
+          </button>
+          <input type="range" id="bri" class="fader master-fader" min="0" max="100" step="1" value="60" aria-label="Fényerő">
+          <output id="briOut" for="bri">60%</output>
+        </div>
+      </section>
+    </div>
+
+    <nav class="tabs" id="tabs" role="tablist" aria-label="Fülek"></nav>
+
+    <main class="panel">
+      <div class="hint-card" id="hint">
+        <p class="hint-title">Nincs csatlakoztatott szalag</p>
+        <p class="muted">Kapcsold be az ESP32-t, majd koppints a Csatlakozás gombra. Addig is minden beállítás itt, az élő szalagon látszik.</p>
+        <p class="no-ble-text muted">Ez a böngésző nem tud Bluetooth-on csatlakozni: telefonon Chrome, laptopon Chrome vagy Edge kell.</p>
+        <div class="row"><button class="btn primary ble-only" id="hintConnect" type="button">Csatlakozás</button><button class="btn ghost" id="hintDemo" type="button">Bemutató eszköz</button></div>
+      </div>
+      <section id="pane-color" class="pane" role="tabpanel" aria-labelledby="tab-color"></section>
+      <section id="pane-fx" class="pane" role="tabpanel" aria-labelledby="tab-fx" hidden></section>
+      <section id="pane-modes" class="pane" role="tabpanel" aria-labelledby="tab-modes" hidden></section>
+      <section id="pane-settings" class="pane" role="tabpanel" aria-labelledby="tab-settings" hidden></section>
+    </main>
+  </div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+  <div class="drop-veil" aria-hidden="true"><p>Engedd el a .ledmode fájlt az importáláshoz</p></div>
+</body>
+</html>

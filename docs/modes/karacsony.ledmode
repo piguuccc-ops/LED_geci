@@ -1,0 +1,13 @@
+{
+  "ledmode": 1,
+  "name": "Karácsony",
+  "effect": "chase",
+  "speed": 90,
+  "intensity": 40,
+  "colors": [
+    "#FF0000",
+    "#00C040",
+    "#FFE8C8"
+  ],
+  "description": "Piros, zöld és meleg fehér futófény."
+}

@@ -1,0 +1,12 @@
+{
+  "ledmode": 1,
+  "name": "Óceán",
+  "effect": "wave",
+  "speed": 70,
+  "intensity": 48,
+  "colors": [
+    "#00A0FF",
+    "#001850"
+  ],
+  "description": "Lassú kék hullámok sötétkék háttéren."
+}

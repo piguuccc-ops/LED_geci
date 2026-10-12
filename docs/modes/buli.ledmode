@@ -1,0 +1,47 @@
+{
+  "ledmode": 1,
+  "name": "Buli",
+  "effect": "playlist",
+  "steps": [
+    {
+      "effect": "rainbow",
+      "speed": 170,
+      "intensity": 60,
+      "duration": 15000
+    },
+    {
+      "effect": "chase",
+      "speed": 160,
+      "intensity": 0,
+      "colors": [
+        "#FF0040",
+        "#00FF80",
+        "#4000FF"
+      ],
+      "duration": 12000
+    },
+    {
+      "effect": "comet",
+      "speed": 180,
+      "intensity": 80,
+      "colors": [
+        "#FF00FF",
+        "#00FFFF"
+      ],
+      "duration": 12000
+    },
+    {
+      "effect": "twinkle",
+      "speed": 180,
+      "intensity": 200,
+      "colors": [
+        "#FF0000",
+        "#00FF00",
+        "#0000FF",
+        "#FFFF00"
+      ],
+      "duration": 12000
+    }
+  ],
+  "description": "Négy effekt váltakozik 12–15 másodpercenként."
+}

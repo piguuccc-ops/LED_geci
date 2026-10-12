@@ -1,0 +1,32 @@
+{
+  "ledmode": 1,
+  "name": "Napfelkelte",
+  "effect": "keyframes",
+  "speed": 128,
+  "intensity": 128,
+  "loop": false,
+  "brightness": 255,
+  "frames": [
+    {
+      "color": "#000000",
+      "fade": 0,
+      "hold": 1000
+    },
+    {
+      "color": "#2A0E00",
+      "fade": 60000,
+      "hold": 0
+    },
+    {
+      "color": "#FF5A00",
+      "fade": 120000,
+      "hold": 0
+    },
+    {
+      "color": "#FFD7A0",
+      "fade": 120000,
+      "hold": 0
+    }
+  ],
+  "description": "Öt perc alatt sötétből meleg fehérig, aztán úgy marad. Ébresztőfénynek jó."
+}
